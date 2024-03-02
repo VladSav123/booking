@@ -15,7 +15,7 @@ class Train(models.Model):
     type = models.CharField(max_length = 100)
     name = models.CharField(max_length = 100)
     way = models.CharField(max_length = 200)
-    departure = models.CharField(max_length = 30)
+    departure = models.DateField()
     
     def __str__(self):
         return f'Користувач: {self.name} Тип потягу: {self.type}  Шлях: {self.way} Відправка: {self.departure
