@@ -24,10 +24,16 @@ SECRET_KEY = 'django-insecure-yflst3or2-$1=r0ki=n08ncq=qvj&%p1@umjw%2m1331+13=p=
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+ 
+USE_TZ = False
+ 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'booking_system.User'
 
+LOGIN_REDIRECT_URL = "/"
+
+LOGIN_URL = 'login_page' 
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.messages',
     'booking_system',
 ]
 
@@ -48,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -55,7 +62,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,9 +123,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+APPEND_SLASH = False

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна</title>
+    <!-- Підключення Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/login_register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="icon" type="image/png" href="{% static '/images/favicon.png' %}">
+</head>
+<body>
+    <!-- Навігаційна панель Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-bar">
+      <a class="navbar-brand" href="/">
+        <img id="main_logo" class="{% if not user.is_authenticated %}not-authenticated{% endif %}" src="{% static '/images/logo.gif' %}">
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                    <a class="nav-link" href="/">
+                        <img src="{% if request.path == '/' %}{% static '/images/active-home-icon.svg'%}{% else %}{% static '/images/home-icon.svg' %}{% endif %}" alt = "Головна" class = "nav-icon"> Головна
+
+                    </a>
+                </li>
+                <li class="nav-item {% if request.path == '/airplanes/' %}active{% endif %}">
+                    <a class="nav-link" href="/airplanes/">
+                        <img src="{% if request.path == '/airplanes/' %}{% static '/images/active-airplane-icon.png' %}{% else %}{% static '/images/airplane-icon.png' %}{% endif %}" alt="Авіаквитки" class="nav-icon"> Авіаквитки
+                    </a>
+                </li>
+                <li class="nav-item {% if request.path == '/trains/' %}active{% endif %}">
+                    <a class="nav-link" href="/trains/">
+                        <img src="{% if request.path == '/trains/' %}{% static '/images/active-train-icon.png' %}{% else %}{% static '/images/train-icon.png' %}{% endif %}" alt="Потяги" class="nav-icon"> Потяги
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.booking.com/" target="_blank">
+                        <img src="{% static '/images/hotel-icon.png' %}" alt="Готелі" class="nav-icon"> Готелі
+                    </a>
+                </li>
+            </ul>
+
+            <div class="our_contacts" >
+              <a>Наші контакти</a>
+            </div>
+
+                <div class="selector_language">
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                      <div class="col-md-50">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend ">
+                            <!-- Власне зображення глобуса -->
+                            <span class="input-group-text"><img src="/static/images/ukrainian_flag.svg" width="24" height="24" alt="Globe" width="24" height="24"></span>
+                          </div>
+                          <select class="custom-select" id="language-select">
+
+                            <option value="ua">Українська</option>
+                            <option value="en">Англійська</option>
+                            <!-- Додайте інші мови за потребою -->
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+        </div>
+        <button href="#" onclick="register_page()" class="register-link">Зареєструватись</button> 
+    </nav>
+
+
+    <section class="container">
+        <div class="login-container">
+            <div class="form-container">
+                <h1  class="opacity">Вхід в акаунт</h1>
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <input type="email" name="email" placeholder="E-MAIL"required />
+                    <p style="color: rgb(163, 65, 65);  margin-top: -20px; ">{{ message_email }}</p>
+                    <input type="password" name="password" placeholder="PASSWORD" required />
+                    <p style="color: rgb(163, 65, 65);  margin-top: -20px; ">{{ message_password }}</p>
+                    <button id="submit_button_id" type="submit" class="opacity" >Продовжити </button>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li{% if message.tags %}  class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                  {% endif %}
+                </form>
+                <div class="register-forget opacity">
+
+                    <a href="{% url 'register_page' %}">Ще не зареєстровані?</a>
+                    <a href="/recovery_password">Забули пароль?</a>
+                </div>
+            </div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+    
+
+  
+
+    <!-- Підключення скриптів Bootstrap та jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script>
+  function register_page() {
+    var url = "http://127.0.0.1:8000/register/"; // Set your desired URL here
+    window.location.href = url;
+  }
+
+
+  document.getElementById('language-select').addEventListener('change', function() {
+    var flagImg = document.querySelector('.input-group-text img');
+    var selectedLanguage = this.value;
+
+    // Оновлення зображення прапора залежно від вибраної мови
+    switch(selectedLanguage) {
+      case 'ua':
+      flagImg.src = "/static/images/ukrainian_flag.svg";
+      break;
+  case 'en':
+      flagImg.src = "/static/images/flag_en.svg";
+      break;
+    }
+  });
+
+// Отримуємо всі елементи з класом .tickets_info
+var ticketInputs = document.querySelectorAll('.tickets_info');
+
+// Об'являємо змінну для збереження значення радіусів границі до фокусу
+var previousBorderRadius;
+
+// Перебираємо отримані елементи
+ticketInputs.forEach(function(input) {
+  // Додаємо подію фокусу
+  input.addEventListener('focus', function() {
+    // Зберігаємо поточні значення радіусів границі
+    previousBorderRadius = {
+      borderTopRightRadius: input.style.borderTopRightRadius,
+      borderBottomRightRadius: input.style.borderBottomRightRadius,
+      borderTopLeftRadius: input.style.borderTopLeftRadius,
+      borderBottomLeftRadius: input.style.borderBottomLeftRadius
+    };
+    // Змінюємо стиль при отриманні фокусу
+    input.style.borderTopRightRadius = '10px';
+    input.style.borderBottomRightRadius = '10px';
+    input.style.borderTopLeftRadius = '10px';
+    input.style.borderBottomLeftRadius = '10px';
+    input.style.borderColor = '#007acc';
+  });
+
+  // Додаємо подію зняття фокусу
+  input.addEventListener('blur', function() {
+    // Повертаємо радіуси границі до попередніх значень при втраті фокусу
+    input.style.borderTopRightRadius = previousBorderRadius.borderTopRightRadius;
+    input.style.borderBottomRightRadius = previousBorderRadius.borderBottomRightRadius;
+    input.style.borderTopLeftRadius = previousBorderRadius.borderTopLeftRadius;
+    input.style.borderBottomLeftRadius = previousBorderRadius.borderBottomLeftRadius;
+    input.style.borderColor = '';
+  });
+});
+
+
+
+
+</script>
+
+</html>

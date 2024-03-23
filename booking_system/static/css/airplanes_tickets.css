@@ -1,0 +1,196 @@
+* {
+    user-select: none;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+  
+  body {
+    background-color: #ffffff;
+  
+  }
+  
+  #navbarSupportedContent {
+      font-size: 20px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      margin-left: 30px;
+  
+  }
+  
+  #nav-bar {
+      height: 100px;
+      border-bottom: 2px solid #cacaca;
+  }
+  
+  
+  #main_text {
+      font-size: 30px;
+      color: #007acc;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-left: 0px;
+  
+      
+  
+  }
+  
+  #main_logo {
+    width: 35%;
+    margin-left: 400px;
+  }
+  
+  #main_logo.not-authenticated {
+    width: 35%;
+    /* Стилі, які будуть застосовані, якщо користувач не аутентифікований */
+    margin-left: 400px;
+  }
+  
+  .nav-item {
+      color: #000000;
+  }
+  
+  .nav-item.active .nav-link {
+      border-bottom: 3px solid rgb(8, 168, 61); /* Змінюємо товщину та колір підкреслення при наведенні курсора */
+  }
+  
+  
+  
+  
+  .nav-item {
+      padding: 15px;
+  }
+  
+  .nav-icon {
+      width: 35px;
+      height: 35px;
+  }
+  
+  .register-link {
+      border: none;
+      background-color: #4CAF50; /* Зелений колір */
+      color: rgb(255, 255, 255);
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin-right: 100px;
+      margin: 4px 2px;
+      border-radius: 8px; /* Круглі кути */
+      transition-duration: 0.4s;
+      transition: background-color 0.4s ease;
+  
+    }
+    
+  .register-link:hover {
+      background-color: #007acc; /* Зелений колір при наведенні */
+  }
+  
+
+  
+  
+  .our_contacts {
+    font-size: 20px;
+    color: #0e754a;
+    background-color: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 2px solid #dadada;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-right: 20px;
+    transition: background-color 0.4s ease;
+  }
+  
+  .our_contacts:hover {
+    background-color: #b3b3b3;
+    color: #007acc;
+  }
+  
+  
+  
+  
+  
+  .selector_language {
+      margin-bottom: 30px;
+      margin-right: 25px;
+  }
+  
+  
+  
+
+.form_find_ticket {
+    margin-left: 460px;
+    margin-top: 150px;
+  
+  }
+  
+  /* Зміна колір рамки при фокусі на поле вводу тексту */
+  .tickets_info:focus {
+    border-top-right-radius: 10px;
+    border-color: #007acc; 
+  }
+  
+  .tickets_info {
+    padding: 10px 40px 15px;
+    border-radius: 10px;
+    border: 1px solid #dadada;
+  
+  
+  }
+  
+  
+  
+  .form_find_ticket .form-row .form-group:nth-child(1) .tickets_info {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;  
+    height: 55px;
+    width: 350px;
+  }
+  
+  
+  .form_find_ticket .form-row .form-group:nth-child(2) .tickets_info {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;  
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;  
+    height: 55px;
+    width: 350px;
+  }
+  
+  .form_find_ticket .form-row .form-group:nth-child(3) .tickets_info {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;  
+    height: 55px;
+    width: 350px;
+  }
+  
+  
+  
+  
+  
+  
+  .options-container {
+    margin-left: 20px;
+    background-color: #007acc;
+    border: 1px solid #dadada;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 300px;
+  }
+  
+  .option {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .option:hover {
+    background-color: #f0f0f0;
+  }
+  
+  
+  

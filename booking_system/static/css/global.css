@@ -1,0 +1,22 @@
+body {
+    font-family:"Impact, Haettenschweiler," 'Arial Narrow Bold', sans-serif
+
+}
+
+.messages .success {
+    color: green;
+}
+
+/* Стилі для повідомлень про помилки */
+.messages .error {
+    color: red;
+}
+
+/* Загальні стилі для всіх повідомлень */
+.messages li {
+    font-size: 20px;
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+

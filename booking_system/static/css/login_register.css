@@ -1,0 +1,279 @@
+* {
+user-select: none;
+}
+
+*:focus {
+outline: none;
+}
+
+
+#navbarSupportedContent {
+font-size: 20px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+margin-left: 100px;
+
+}
+
+#nav-bar {
+height: 100px;
+}
+
+
+#main_text {
+font-size: 40px;
+color: #007acc;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin-left: 300px;
+}
+#main_logo {
+  width: 35%;
+  margin-left: 380px;
+}
+
+#main_logo.not-authenticated {
+  width: 35%;
+  /* Стилі, які будуть застосовані, якщо користувач не аутентифікований */
+  margin-left: 380px;
+}
+
+
+.nav-item {
+color: #000000;
+}
+
+.nav-item.active .nav-link {
+border-bottom: 3px solid rgb(8, 168, 61); /* Змінюємо товщину та колір підкреслення при наведенні курсора */
+}
+
+
+
+
+.nav-item {
+padding: 15px;
+}
+
+.nav-icon {
+width: 35px;
+height: 35px;
+}
+
+.register-link {
+border: none;
+background-color: #4CAF50; /* Зелений колір */
+color: rgb(255, 255, 255);
+padding: 10px 24px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+margin-right: 100px;
+margin: 4px 2px;
+border-radius: 8px; /* Круглі кути */
+transition-duration: 0.4s;
+transition: background-color 0.4s ease;
+
+}
+
+.register-link:hover {
+background-color: #007acc; /* Зелений колір при наведенні */
+}
+
+
+
+
+.our_contacts {
+font-size: 20px;
+color: #0e754a;
+background-color: none;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+border: 2px solid #dadada;
+border-radius: 20px;
+padding: 10px 15px;
+margin-right: 20px;
+transition: background-color 0.4s ease;
+}
+
+.our_contacts:hover {
+background-color: #b3b3b3;
+color: #007acc;
+}
+
+
+
+
+
+.selector_language {
+margin-bottom: 30px;
+margin-right: 25px;
+}
+
+.form_find_ticket {
+margin-left: 360px;
+margin-top: 150px;
+
+}
+
+/* Зміна колір рамки при фокусі на поле вводу тексту */
+.tickets_info:focus {
+border-top-right-radius: 10px;
+border-color: #007acc; 
+}
+
+.tickets_info {
+padding: 10px 40px 15px;
+border-radius: 10px;
+border: 1px solid #dadada;
+
+
+}
+
+
+
+.form_find_ticket .form-row .form-group:nth-child(1) .tickets_info {
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;  
+}
+
+
+.form_find_ticket .form-row .form-group:nth-child(2) .tickets_info {
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;  
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;  
+}
+
+.form_find_ticket .form-row .form-group:nth-child(3) .tickets_info {
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;  
+}
+
+
+
+
+
+a {
+text-decoration: none;
+color: var(--color);
+font-size: 18px;
+
+}
+
+a:hover {
+text-decoration: none;
+color: var(--color);
+}
+
+h1 {
+color: #000000;
+margin-left: 210px;
+font-size: 2.5rem;
+}
+
+.container {
+margin-top: -150px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.login-container {
+position: relative;
+width: 52.2rem;
+}
+.form-container {
+border: 1px solid hsla(0, 0%, 65%, 0.158);
+box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+backdrop-filter: blur(20px);
+z-index: 99;
+padding: 3rem;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+-ms-border-radius: 10px;
+-o-border-radius: 10px;
+}
+
+.login-container form input {
+display: block;
+padding: 14.5px;
+width: 100%;
+margin: 2rem 0;
+color: var(--color);
+outline: none;
+background-color: #9191911f;
+border: none;
+border-radius: 5px;
+font-weight: 500;
+letter-spacing: 0.8px;
+font-size: 15px;
+backdrop-filter: blur(15px);
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+}
+
+.login-container form input:focus {
+box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
+animation: wobble 0.3s ease-in;
+-webkit-animation: wobble 0.3s ease-in;
+}
+
+.login-container form button {
+background-color: var(--primary-color);
+color: var(--color);
+display: block;
+padding: 13px;
+border-radius: 5px;
+outline: none;
+font-size: 18px;
+letter-spacing: 1.5px;
+font-weight: bold;
+width: 100%;
+cursor: pointer;
+margin-bottom: 2rem;
+transition: all 0.1s ease-in-out;
+border: none;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+-webkit-transition: all 0.1s ease-in-out;
+-moz-transition: all 0.1s ease-in-out;
+-ms-transition: all 0.1s ease-in-out;
+-o-transition: all 0.1s ease-in-out;
+}
+
+
+
+
+
+.register-forget {
+margin: 1rem 0;
+display: flex;
+justify-content: space-between;
+}
+.opacity {
+opacity: 0.6;
+}
+
+.theme-btn-container {
+position: absolute;
+left: 0;
+bottom: 2rem;
+}
+
+
+#submit_button_id {
+color: #ffffff;
+background-color: #000000;
+border: 1px solid #dadada; 
+box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+transition: background-color 1s ease;
+}
+
+#submit_button_id:hover {
+background-color: #303030;
+scale: none;
+}
